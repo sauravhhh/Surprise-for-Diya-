@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Beautiful Diya ✨</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ff9a9e 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: #4a4a4a;
+        }
+
+        .container {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .main-content {
+            text-align: center;
+            z-index: 10;
+            position: relative;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 600px;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .name {
+            font-size: 4rem;
+            font-weight: 300;
+            color: #ff6b9d;
+            margin-bottom: 1rem;
+            text-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+            letter-spacing: 0.1em;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+            }
+            to {
+                text-shadow: 0 10px 40px rgba(255, 107, 157, 0.6);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #6a5acd;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            opacity: 0;
+            animation: fadeIn 2s ease-out 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .message {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #5a5a5a;
+            margin-bottom: 2rem;
+            font-style: italic;
+            opacity: 0;
+            animation: fadeIn 2s ease-out 2s forwards;
+        }
+
+        .flowers {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            opacity: 0;
+            animation: fadeIn 2s ease-out 2.5s forwards;
+        }
+
+        .flower {
+            font-size: 2rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .flower:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .flower:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .flower:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .flower:nth-child(5) {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .butterfly {
+            position: absolute;
+            font-size: 2rem;
+            color: #ff6b9d;
+            animation: flutter 8s ease-in-out infinite;
+            z-index: 5;
+        }
+
+        .butterfly:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+            animation-duration: 12s;
+        }
+
+        .butterfly:nth-child(2) {
+            top: 20%;
+            right: 15%;
+            animation-delay: 2s;
+            animation-duration: 10s;
+        }
+
+        .butterfly:nth-child(3) {
+            bottom: 30%;
+            left: 20%;
+            animation-delay: 4s;
+            animation-duration: 14s;
+        }
+
+        .butterfly:nth-child(4) {
+            bottom: 20%;
+            right: 10%;
+            animation-delay: 6s;
+            animation-duration: 11s;
+        }
+
+        .butterfly:nth-child(5) {
+            top: 50%;
+            left: 5%;
+            animation-delay: 8s;
+            animation-duration: 13s;
+        }
+
+        .butterfly:nth-child(6) {
+            top: 70%;
+            right: 5%;
+            animation-delay: 1s;
+            animation-duration: 9s;
+        }
+
+        @keyframes flutter {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(100px, -50px) rotate(10deg);
+            }
+            50% {
+                transform: translate(200px, 0px) rotate(-5deg);
+            }
+            75% {
+                transform: translate(150px, 50px) rotate(8deg);
+            }
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            border-radius: 50%;
+            animation: sparkle 3s ease-in-out infinite;
+        }
+
+        .sparkle:nth-child(odd) {
+            background: #ff6b9d;
+        }
+
+        .sparkle:nth-child(even) {
+            background: #6a5acd;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .heart {
+            position: absolute;
+            color: #ff6b9d;
+            font-size: 1.5rem;
+            animation: heartbeat 2s ease-in-out infinite;
+            z-index: 3;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+
+        .petals {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .petal {
+            position: absolute;
+            color: #ff6b9d;
+            font-size: 1.5rem;
+            animation: fall linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .interactive-message {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            font-size: 1rem;
+            color: #6a5acd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 2s ease-out 3s forwards;
+        }
+
+        .interactive-message:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.2);
+        }
+
+        .hidden-message {
+            display: none;
+            font-size: 1.1rem;
+            color: #ff6b9d;
+            margin-top: 1rem;
+            font-weight: 500;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @media (max-width: 768px) {
+            .name {
+                font-size: 3rem;
+            }
+            
+            .main-content {
+                padding: 2rem;
+                margin: 1rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .message {
+                font-size: 1rem;
+            }
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .star {
+            position: absolute;
+            color: #fff;
+            font-size: 0.8rem;
+            animation: twinkle 4s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+    
+        .gift-burst {
+            animation: burst 0.5s ease-out forwards;
+        }
+
+        @keyframes burst {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+
+
+        .gift-wrapper {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle at center, #ffb6c1, #ff69b4);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            z-index: 20;
+            position: relative;
+        }
+
+        .gift-wrapper.burst {
+            animation: boxBurst 0.6s ease-out forwards;
+        }
+
+        @keyframes boxBurst {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(3); opacity: 0; }
+        }
+
+        .main-content {
+            display: none;
+        }
+
+        .main-content.show {
+            display: block;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <!-- Floating butterflies -->
+        <div class="butterfly">🦋</div>
+        <div class="butterfly">🦋</div>
+        <div class="butterfly">🦋</div>
+        <div class="butterfly">🦋</div>
+        <div class="butterfly">🦋</div>
+        <div class="butterfly">🦋</div>
+
+        <!-- Hearts -->
+        <div class="heart" style="top: 15%; left: 15%;">💖</div>
+        <div class="heart" style="top: 25%; right: 20%;">💕</div>
+        <div class="heart" style="bottom: 35%; left: 10%;">💗</div>
+        <div class="heart" style="bottom: 25%; right: 15%;">💝</div>
+
+        <!-- Falling petals -->
+        <div class="petals" id="petals"></div>
+
+        <!-- Stars -->
+        <div class="stars" id="stars"></div>
+
+        <!-- Main content -->
+        <div class="gift-wrapper" id="giftWrapper" onclick="openWholeGift()">🎁</div>
+<div class="main-content" id="mainContent">
+            <h1 class="name">Diya</h1>
+            <p class="subtitle">Like a lamp that lights up the darkness</p>
+            <p class="message">
+                "Just like your name means 'lamp' in Sanskrit,<br>
+                you bring light, warmth, and beauty<br>
+                to everyone around you. ✨"
+            </p>
+            
+            <div class="flowers">
+                <span class="flower">🌸</span>
+                <span class="flower">🌺</span>
+                <span class="flower">🌻</span>
+                <span class="flower">🌷</span>
+                <span class="flower">🌹</span>
+            </div>
+
+            <div class="interactive-message" id="giftBox" onclick="openGiftBox()">🎁</div>
+
+            <div class="hidden-message" id="hiddenMessage">
+                "Some gifts are wrapped in paper, some in smiles—<br>
+but the best one is you, wrapped in love and magic. ✨🩷"
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create falling petals
+        function createPetal() {
+            const petals = document.getElementById('petals');
+            const petal = document.createElement('div');
+            petal.className = 'petal';
+            petal.innerHTML = ['🌸', '🌺', '🌼', '🌻'][Math.floor(Math.random() * 4)];
+            petal.style.left = Math.random() * 100 + '%';
+            petal.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            petal.style.animationDelay = Math.random() * 2 + 's';
+            petals.appendChild(petal);
+
+            // Remove petal after animation
+            setTimeout(() => {
+                petal.remove();
+            }, 8000);
+        }
+
+        // Create sparkles
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.animationDelay = Math.random() * 3 + 's';
+            document.body.appendChild(sparkle);
+
+            setTimeout(() => {
+                sparkle.remove();
+            }, 3000);
+        }
+
+        // Create stars
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            for (let i = 0; i < 20; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.innerHTML = '✨';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 4 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Show hidden message
+        function showHiddenMessage() {
+            const hiddenMessage = document.getElementById('hiddenMessage');
+            hiddenMessage.style.display = 'block';
+            
+            // Create extra butterflies
+            for (let i = 0; i < 3; i++) {
+                setTimeout(() => {
+                    const butterfly = document.createElement('div');
+                    butterfly.className = 'butterfly';
+                    butterfly.innerHTML = '🦋';
+                    butterfly.style.left = Math.random() * 80 + 10 + '%';
+                    butterfly.style.top = Math.random() * 80 + 10 + '%';
+                    butterfly.style.color = ['#ff6b9d', '#6a5acd', '#ff9a9e'][Math.floor(Math.random() * 3)];
+                    document.body.appendChild(butterfly);
+                    
+                    setTimeout(() => {
+                        butterfly.remove();
+                    }, 8000);
+                }, i * 500);
+            }
+
+            // Create celebration sparkles
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    createSparkle();
+                }, i * 200);
+            }
+        }
+
+        
+        function openGiftBox() {
+            const giftBox = document.getElementById("giftBox");
+            giftBox.classList.add("gift-burst");
+            setTimeout(() => {
+                giftBox.style.display = "none";
+                showHiddenMessage();
+            }, 500);
+        }
+
+
+        
+        function openWholeGift() {
+            const box = document.getElementById("giftWrapper");
+            const content = document.getElementById("mainContent");
+            box.classList.add("burst");
+            setTimeout(() => {
+                box.style.display = "none";
+                content.classList.add("show");
+            }, 600);
+        }
+
+
+        // Initialize animations
+        createStars();
+        
+        // Create petals periodically
+        setInterval(createPetal, 2000);
+        
+        // Create sparkles periodically
+        setInterval(createSparkle, 3000);
+
+        // Add click effects to flowers
+        document.querySelectorAll('.flower').forEach(flower => {
+            flower.addEventListener('click', function() {
+                this.style.transform = 'scale(1.5) rotate(360deg)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1) rotate(0deg)';
+                }, 500);
+                
+                // Create sparkles around the flower
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        createSparkle();
+                    }, i * 100);
+                }
+            });
+        });
+
+        // Add mouse trail effect
+        document.addEventListener('mousemove', function(e) {
+            if (Math.random() < 0.1) {
+                const trail = document.createElement('div');
+                trail.className = 'sparkle';
+                trail.style.left = e.clientX + 'px';
+                trail.style.top = e.clientY + 'px';
+                trail.style.position = 'fixed';
+                trail.style.pointerEvents = 'none';
+                document.body.appendChild(trail);
+
+                setTimeout(() => {
+                    trail.remove();
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>
